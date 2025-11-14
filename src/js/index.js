@@ -12,14 +12,13 @@ botaoEnviar.addEventListener('click', function () {
 
         validar()
 
+        itemAtual++;
 
     });
 
     itemAtual = 0;
 
 });
-
-
 
 
 
@@ -45,12 +44,10 @@ function invalido() {
 
 function validar() {
 
-
     if (itensInput[itemAtual].value != "") {
         valido()
     } else {
         invalido()
     }
 
-    itemAtual++;
 }
