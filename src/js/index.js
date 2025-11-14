@@ -5,26 +5,21 @@ const textoAlertaCampoObrigatorio = document.querySelectorAll('.invalido-campo-o
 let itemAtual = 0;
 
 
-botaoEnviar.addEventListener('click', function(){
+botaoEnviar.addEventListener('click', function () {
 
-    if (itemAtual === itensInput.length){
-        return;
-    }
+    itensInput.forEach(item => {
 
-    if(itensInput[itemAtual].value != ""){
-        valido()
-    } else {
-        invalido()
-    }
+        checar()
 
-    itemAtual++;
+
+    });
+
 
 });
 
 
 
-
-function valido(item) {
+function valido() {
     itensInput[itemAtual].classList.remove('input-invalido');
     itensInput[itemAtual].classList.add('input-valido');
 
@@ -40,4 +35,17 @@ function invalido() {
 
     textoAlertaCampoObrigatorio[itemAtual].classList.remove('ocultar');
 
+}
+
+
+function checar() {
+
+
+    if (itensInput[itemAtual].value != "") {
+        valido()
+    } else {
+        invalido()
+    }
+
+    itemAtual++;
 }
