@@ -122,6 +122,9 @@ body{
         flex-direction: column;
     }
 
+    .formulario{
+        max-width: 90%;
+    }
 
     .mensagens{
         text-align: center;
