@@ -2,59 +2,42 @@ const botaoEnviar = document.querySelector('.botao-enviar');
 const itensInput = document.querySelectorAll('.input');
 const textoAlertaCampoObrigatorio = document.querySelectorAll('.invalido-campo-obrigatorio')
 
+let itemAtual = 0;
 
 
+botaoEnviar.addEventListener('click', function(){
 
+    if (itemAtual === itensInput.length){
+        return;
+    }
 
-// botaoEnviar.addEventListener('click' validar(){
+    if(itensInput[itemAtual].value != ""){
+        valido()
+    } else {
+        invalido()
+    }
 
-botaoEnviar.addEventListener('onclick', function (item) {
+    itemAtual++;
 
-
-    itensInput.forEach(function (item) {
-
-        if (itensInput.value === "") {
-            invalido(item);
-        } else {
-            valido(item);
-        }
-
-
-    })
-
-
-
-
-
-
-}
-
-
-)
-
-
-
-
-
-
+});
 
 
 
 
 function valido(item) {
-    itensInput[item].classList.remove('input-invalido');
-    itensInput[item].classList.add('input-valido');
+    itensInput[itemAtual].classList.remove('input-invalido');
+    itensInput[itemAtual].classList.add('input-valido');
 
-    textoAlertaCampoObrigatorio[item].classList.add('ocultar');
+    textoAlertaCampoObrigatorio[itemAtual].classList.add('ocultar');
 }
 
 
 
 function invalido() {
 
-    itensInput[item].classList.add('input-invalido');
-    itensInput[item].classList.remove('input-valido');
+    itensInput[itemAtual].classList.add('input-invalido');
+    itensInput[itemAtual].classList.remove('input-valido');
 
-    textoAlertaCampoObrigatorio[item].classList.remove('ocultar');
+    textoAlertaCampoObrigatorio[itemAtual].classList.remove('ocultar');
 
 }
