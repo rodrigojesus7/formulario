@@ -1,10 +1,12 @@
 :root {
     --mensagem-cor: #FFFFFF;
-    --dados-cor: #000000;
+    --input-texto-cor: #000000;
     --placeholder-cor: #A8A8A8;
     --invalido-cor: #F52E2E;
     --valido-cor: #00C22B;
     --botao-enviar-background-cor: #3CCC87;
+    --botao-enviar-background-active-cor: #278356;
+
     --botao-enviar-cor: #FFFFFF;
     --formulario-background-cor: #FFFFFF;
     --input-borda-color: #000000;
@@ -76,7 +78,7 @@ body{
     width: 100%;
     height: 3.5rem;
     padding-left: 1rem;
-
+    color: var(--input-texto-cor);
 }
 
 .input::placeholder{
@@ -89,9 +91,6 @@ body{
     resize: none;
 }
 
-.input-mensagem::placeholder{
-    
-}
 
 .texto-campo-obrigatorio{
     font-size: 1.5rem;
@@ -109,7 +108,12 @@ body{
     color: var(--botao-enviar-cor);
     border: none;
     border-radius: 0.5rem;
+    cursor: pointer;
+}
 
+.botao-enviar:active{
+    background-color: var(--botao-enviar-background-active-cor);
+    transition: 0.2s ease;
 }
 
 
