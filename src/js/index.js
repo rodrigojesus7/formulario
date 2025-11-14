@@ -9,13 +9,18 @@ botaoEnviar.addEventListener('click', function () {
 
     itensInput.forEach(item => {
 
-        checar()
+
+        validar()
 
 
     });
 
+    itemAtual = 0;
 
 });
+
+
+
 
 
 
@@ -38,7 +43,7 @@ function invalido() {
 }
 
 
-function checar() {
+function validar() {
 
 
     if (itensInput[itemAtual].value != "") {
